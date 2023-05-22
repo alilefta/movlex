@@ -1,0 +1,46 @@
+.back-button {
+	width: 100%;
+	text-align: left;
+}
+.back-button a {
+	color: #3c3c3c;
+	font-size: 18px;
+	font-weight: 600;
+	text-decoration: none;
+}
+.back-button a img {
+	color: #3c3c3c;
+	font-size: 20px;
+	font-weight: 600;
+	text-decoration: none;
+}
+.back-button a:hover {
+	color: #000;
+}
+.back-button span {
+	font-size: 18px;
+}
+
+.back-button a:hover {
+	color: #000;
+}
+
+.sign-in-with-icon {
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+}
+.grid-buttons {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 10px;
+}
+.login-page .btn,
+.signup-page .btn {
+	background-color: #f8242f;
+}
+.login-page .btn:hover,
+.signup-page .btn:hover {
+	background-color: #000;
+	color: #fff;
+}

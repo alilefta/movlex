@@ -1,0 +1,42 @@
+model WatchList {
+  id      String     @id @default(uuid())
+  media  Media[]  @relation("Viewed_Media", fields: [mediaId], references: [id])
+  mediaId String
+  userId  String  
+  belongTo    User @relation("Viewed_By", fields: [userId], references: [id])
+  @@map(name: "WatchLists")
+}
+
+model Media {
+  id           String    @id @default(uuid())
+  title        String    @db.VarChar(255)
+  genre        String
+  director     String
+  cast         Media_Cast[]
+  description  String
+  rating       Float
+  reviews      Review[]
+  is_paid      Boolean?
+
+  @@map(name: "Media")
+}
+
+model Media_Cast {
+  id           Int      @id @default(autoincrement())
+  cast         String
+  mediaId     String
+  media        Media   @relation(fields: [mediaId], references: [id], onUpdate: NoAction)
+  
+  @@map(name: "Media_Cast")
+}
+
+model Review {
+  id          Int     @id @default(autoincrement())
+  rating      Float
+  comment     String  @db.VarChar(255)
+  user        User    @relation(fields: [userId], references: [id])
+  userId      String
+  media       Media   @relation(fields: [mediaId], references: [id], onUpdate: NoAction)
+  mediaId     String
+  @@map(name: "Reviews")
+}

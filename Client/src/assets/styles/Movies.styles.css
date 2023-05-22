@@ -1,0 +1,45 @@
+.movie-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 40px;
+}
+
+.movie-card {
+	width: calc(33.33% - 20px);
+	margin-bottom: 20px;
+	padding: 20px;
+	border-radius: 5px;
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	padding-bottom: 25px;
+}
+
+.movie-image {
+	width: 100%;
+	height: auto;
+	border-radius: 5px;
+	/* margin-bottom: 10px; */
+}
+
+.movie-info {
+	display: flex;
+	align-items: center;
+}
+
+.movie-title {
+	margin: 0;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.movie-rating {
+	display: flex;
+	align-items: center;
+	margin-left: 10px;
+	color: #f1c40f;
+}
+
+.star-icon {
+	margin-right: 5px;
+}

@@ -1,0 +1,427 @@
+.main-hero {
+	min-height: 500px;
+}
+.main-hero .hero-section {
+	background: #171717;
+	mix-blend-mode: normal;
+	min-height: 100vh;
+	overflow: hidden;
+}
+.main-hero .hero-container.row {
+	min-height: 650px;
+	/* border: 3px solid red; */
+	position: relative;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+	z-index: 1;
+}
+
+/* Carousel */
+
+.carousel.slide {
+	width: 100%;
+	margin: 0;
+	z-index: 3;
+	padding: 0;
+}
+
+.carousel.slide button.carousel-control-prev,
+button.carousel-control-next {
+	background-color: #f8242f;
+	border: none;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 3;
+	transition: all 0.3s ease-in-out;
+}
+.carousel.slide button.carousel-control-prev {
+	left: 10px;
+}
+
+.carousel.slide button.carousel-control-next {
+	right: 10px;
+}
+
+.main-hero .hero-container .slide.carousel .carousel-inner {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+.main-hero .hero-container .slide.carousel .carousel-inner .carousel-item {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background-size: cover;
+	max-height: 650px;
+	margin-left: 0;
+}
+
+.main-hero
+	.hero-container
+	.slide.carousel
+	.carousel-inner
+	.carousel-item.active {
+	display: flex;
+	max-height: 650px;
+	margin-left: 0;
+}
+
+.main-hero
+	.hero-container
+	.slide.carousel
+	.carousel-inner
+	.carousel-item.carousel-item-start,
+.carousel-item.carousel-item-end {
+	display: flex !important;
+	/* margin-left: 0;
+	margin-right: 0; */
+	/* padding: 0; */
+}
+
+.main-hero
+	.hero-container
+	.slide.carousel
+	.carousel-inner
+	.carousel-item
+	.media-info {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	/* background-color: rgba(0, 0, 0, 0.5); */
+}
+.main-hero
+	.hero-container
+	.slide.carousel
+	.carousel-inner
+	.carousel-item
+	.media-info
+	h1 {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 40px;
+	line-height: 52px;
+	color: #ffffff;
+	text-align: left;
+}
+.main-hero
+	.hero-container
+	.slide.carousel
+	.carousel-inner
+	.carousel-item
+	.media-info
+	p {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 300;
+	color: #ffffff;
+	text-align: left;
+	font-size: 14px;
+}
+.main-hero
+	.hero-container
+	.slide.carousel
+	.carousel-inner
+	.carousel-item
+	.media-info
+	.genres {
+	margin: 5px 0 10px 0;
+}
+.main-hero
+	.hero-container
+	.slide.carousel
+	.carousel-inner
+	.carousel-item
+	.media-info
+	.genres
+	span.genre {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 18px;
+	color: #ffffff;
+	margin: 0 5px;
+	background: linear-gradient(
+		90deg,
+		rgba(40, 40, 40, 1) 0%,
+		rgba(0, 0, 0, 1) 100%
+	);
+	width: 82px;
+	height: 28px;
+	padding: 7px 11px;
+	border-radius: 30px;
+}
+
+.main-hero
+	.hero-container
+	.slide.carousel
+	.carousel-inner
+	.carousel-item
+	.media-info
+	.btns {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.main-hero .hero-container .media-info .btns a {
+	border-radius: 30px;
+	background-color: #f8242f;
+	text-decoration: none;
+	color: white;
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+	padding: 15px 30px;
+	font-size: 16px;
+	display: inline-flex;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+	margin: 10px 0;
+	border: 1px solid #6e0008;
+}
+
+.main-hero .hero-container .media-info .btns a::before {
+	content: "";
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.2);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	transition: all 0.3s ease-in-out;
+}
+
+.main-hero .hero-container .media-info .btns a:hover::before {
+	width: 300px;
+	height: 300px;
+}
+
+.main-hero .hero-container .media-info .btns a svg {
+	font-size: 1.4em;
+	margin-left: 5px;
+}
+.main-hero .hero-container .media-info .btns a.watch-trailer-btn {
+	background-color: #010101;
+}
+
+/* Main End */
+/* ===================================================== */
+/* Side bar start */
+
+.sidebar-section {
+	background-color: #000000;
+}
+
+.sidebar-section hr {
+	border: 1px solid #8a8a8a;
+	width: 20%;
+	margin: 0 auto;
+}
+
+.sidebar-section .sidebar-component {
+	margin: 20px 0 20px 0;
+	min-height: 300px;
+}
+.sidebar-section .sidebar-component h3 {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 33px;
+	letter-spacing: -0.02em;
+	color: #dadada;
+	text-align: left;
+	margin: 5px 0 5px 10px;
+}
+
+.sidebar-section .sidebar-component .sidebar-component-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 5px 0 10px 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.sidebar-section .sidebar-component .sidebar-component-list li {
+	margin: 5px 0;
+	background-color: #1c1c1c;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	border-radius: 5px;
+}
+.sidebar-section .sidebar-component .sidebar-component-list li a {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+	text-decoration: none;
+	cursor: pointer;
+}
+.sidebar-section .sidebar-component .sidebar-component-list li a:hover {
+	background-color: #f8242f;
+}
+.sidebar-section
+	.sidebar-component
+	.sidebar-component-list
+	a
+	img.sidebar-component-img {
+	width: 50px;
+}
+.sidebar-section .sidebar-component .sidebar-component-list li a h4 {
+	font-size: 0.9em;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 100%;
+	text-align: left;
+	margin: 0 10px;
+	color: #fff;
+}
+
+/*  Loading Spinner */
+.loading-spinner-max {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.loading-spinner-min {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40vh;
+}
+
+.spinner {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 5px solid rgba(255, 255, 255, 0.1);
+	border-top-color: #f8242f;
+	animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Trending Section */
+.trending-section {
+	padding: 15px;
+}
+
+.trending-section h2 {
+	text-align: left;
+	margin: 20px 0 40px 0;
+	color: #dadada;
+	font-family: "Poppins";
+	font-size: 1.4em;
+}
+.movie-cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.movie-cards a {
+	text-decoration: none;
+}
+.movie-card {
+	width: calc(25% - 10px);
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.movie-card img {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	transition: transform 0.2s ease-out;
+}
+
+.movie-card:hover img {
+	transform: scale(1.1);
+}
+
+.movie-card .movie-title {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.2s ease-out;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.movie-card:hover .movie-title {
+	opacity: 1;
+}
+
+/* Show More */
+
+.trending-section .trending-movies-list button.discover-more-btn {
+	border-radius: 30px;
+	background-color: #f8242f;
+	text-decoration: none;
+	color: white;
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+	padding: 15px 30px;
+	font-size: 16px;
+	display: inline-flex;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+	margin: 10px 0;
+	border: 1px solid #6e0008;
+}
+
+.trending-section .trending-movies-list button.discover-more-btn::before {
+	content: "";
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.2);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	transition: all 0.3s ease-in-out;
+}
+
+.trending-section .trending-movies-list button.discover-more-btn:hover::before {
+	width: 300px;
+	height: 300px;
+}

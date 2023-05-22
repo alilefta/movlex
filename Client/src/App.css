@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,400&family=Roboto:wght@300;400&display=swap");
+@font-face {
+	font-family: "Helvetica Neue LT Pro";
+	src: url("./assets/fonts/HelveticaNeueLTProCn.otf");
+}
+
+@font-face {
+	font-family: "Helvetica";
+	src: url("./assets/fonts/Helvetica.ttf");
+}
+
+@font-face {
+	font-family: "Helvetica Bold";
+	src: url("./assets/fonts/Helvetica.ttf");
+}
+
+:root {
+	--light-gray: #979797;
+	--dark-gray: #dadada;
+	--poppins: "Poppins";
+	--helvetica: "Helvetica";
+	--helvetica-bold: "Helvetica Bold";
+	--helvetica-neuo: "Helvetica Neue LT Pro";
+	--white: #ffffff;
+	--logo-size: 120px;
+	--bg-dark-black: #030303;
+	--bg-dark-gray: #171717;
+	--font-size-nav: 1rem;
+	--icon-size-nav: 1.4rem;
+	--nav-height: 60px;
+	--bg-dark-gray-2: #171717;
+	--bg-blend: normal;
+	--btn-main-color: #f8242f;
+}
+/* mix-blend-mode: */
+.App {
+	text-align: center;
+}
+
+/* Custum styles */
+
+/* ========== Hero =========*/
+.hero {
+	mix-blend-mode: var(--bg-blend);
+	position: relative;
+}
+.hero .op {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.36);
+	z-index: 1;
+}
+.hero .row {
+	background: url("./assets/images/heroImage.jpg");
+	background-size: cover;
+}
+
+.hero .row .jumptron {
+	z-index: 2;
+	min-height: 720px;
+	/* margin-top: 10rem; */
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+
+	/* margin-left: 75px; */
+}
+
+.hero .row .jumptron > h1 {
+	font-family: var(--helvetica-neuo);
+	font-style: normal;
+	font-weight: 700;
+	font-size: 5rem;
+	line-height: 50px;
+	color: var(--white);
+	margin: 2px 0;
+}
+.hero .row .jumptron > p {
+	font-family: var(--helvetica);
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 50px;
+	color: var(--dark-gray);
+	margin: 0;
+}
+.hero .row .jumptron > form {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+}
+
+.hero .row .jumptron > form > div {
+	margin: 15px 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.hero .row .jumptron > form > div > input {
+	border-radius: 5px;
+	padding: 5px 10px;
+	font-family: var(--helvetica);
+	mix-blend-mode: normal;
+	width: 70%;
+	height: 48px;
+	outline: none;
+	border: 0;
+}
+.hero .row .jumptron > form > div ~ div {
+	margin: 4px 0;
+}
+.hero .row .jumptron > form > div > button.call-to-action-btn {
+	width: 200px;
+	height: 50px;
+	background: var(--btn-main-color);
+	border-radius: 10px;
+	font-family: var(--poppins);
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.2rem;
+	line-height: 24px;
+	text-transform: uppercase;
+	color: #ffffff;
+	border: none;
+	transition: 0.2s linear background-color, 0.2s linear border;
+}
+.hero .row .jumptron > form > div > button.call-to-action-btn:hover {
+	background-color: #030303;
+	border: 1px solid #07630d;
+	transition: 0.2s linear background-color, 0.2s linear border;
+}
+
+@media screen and (max-width: 768px) {
+	.hero .row .jumptron form {
+		/* align-items: start;
+		justify-content: flex-start; */
+	}
+	.hero .row .jumptron form div {
+		/* align-items: start;
+		justify-content: flex-start; */
+	}
+	.hero .row .jumptron {
+		align-items: center;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.hero .row .jumptron form {
+		align-items: flex-start;
+	}
+	.hero .row .jumptron form div {
+		align-items: start;
+		justify-content: flex-start;
+	}
+}
+
+/* ========== END HERO ========== */
+
+/* ======== Subscriptions section =============*/
+main .subscriptions-container {
+	padding: 0;
+	background-color: var(--bg-dark-black);
+	padding-top: 60px;
+}
+
+main .subscriptions-container > h1 {
+	margin: 0px 0 58px 0;
+	font-family: var(--helvetica);
+	font-style: normal;
+	font-weight: 700;
+	font-size: 3rem;
+	line-height: 50px;
+	color: var(--white);
+}
+.subscriptions-section {
+	background-color: var(--bg-dark-gray-2);
+	padding: 60px 0;
+}
+
+.subscription-card {
+	border: 1px solid #ddd;
+	background-color: var(--bg-dark-gray);
+	padding: 40px;
+	text-align: center;
+	font-weight: bold;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 4px;
+}
+
+.subscription-card h2 {
+	font-size: 24px;
+	margin-bottom: 30px;
+	font-family: var(--poppins);
+	color: var(--dark-gray);
+}
+
+.subscription-card h3 {
+	font-size: 36px;
+	font-weight: bold;
+	margin-bottom: 40px;
+	font-family: var(--helvetica-bold);
+	color: var(--dark-gray);
+}
+
+.subscription-card ul {
+	list-style: none;
+	margin-bottom: 30px;
+	padding-left: 0;
+}
+
+.subscription-card li {
+	margin-bottom: 10px;
+	font-family: var(--poppins);
+	color: var(--dark-gray);
+}
+
+.subscription-card a {
+	display: block;
+	margin-top: 20px;
+}
+
+.subscription-card a:hover {
+	text-decoration: none;
+}
+
+.subscription-card .btn-primary {
+	background-color: var(--btn-main-color);
+	border-color: #f44336;
+	font-family: var(--poppins);
+}
+
+.subscription-card .btn-primary:hover {
+	background-color: #e53935;
+	border-color: #e53935;
+}
+/* ======== Subscriptions section END =============*/
+
+/* ====== Footer START====== */
+.footer {
+	height: 284px;
+	background-color: var(--bg-dark-black);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer .footer-nav {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	/* width: 100%; */
+}
+.footer .footer-nav > .footer-navigation {
+	display: flex;
+	list-style-type: none;
+	align-items: center;
+	padding: 0;
+}
+.footer .footer-nav > .footer-navigation > li {
+	margin: 0 20px;
+	font-family: (--helvetica-neuo);
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 24px;
+	/* or 120% */
+
+	text-align: center;
+}
+.footer .footer-nav > .footer-navigation > li > a {
+	color: #e1e1e1;
+	text-decoration: none;
+}
+
+.footer .social {
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+}
+
+.footer .social > li {
+	margin: 0 20px;
+}
+.footer .social > li > a {
+	text-decoration: none;
+	color: #e1e1e1;
+	font-size: 1.4em;
+}
+
+.footer .copyrights > p {
+	font-family: var(--poppins);
+	font-style: normal;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: 50px;
+	color: var(--light-gray);
+}

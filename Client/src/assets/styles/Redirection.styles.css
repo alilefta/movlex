@@ -1,0 +1,15 @@
+.redirection-page {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.redirection-page-content {
+	text-align: center;
+}
+
+.redirection-page-heading {
+	font-size: 2rem;
+	color: #333;
+}
