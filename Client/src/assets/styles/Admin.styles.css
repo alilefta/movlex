@@ -1,0 +1,132 @@
+.admin-page-dashboard {
+	padding: 20px;
+}
+
+.admin-page-row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+.admin-page-col-lg-6 {
+	flex: 0 0 50%;
+	max-width: 50%;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.admin-page-col-lg-12 {
+	flex: 0 0 100%;
+	max-width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.admin-page-dashboard-title {
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+.admin-page-dashboard-chart {
+	background-color: #f5f5f5;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.admin-page-chart-small {
+	width: 100%;
+	height: 200px;
+}
+
+.admin-page-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.admin-page-table th,
+.admin-page-table td {
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+
+.admin-page-table th {
+	background-color: #f5f5f5;
+	text-align: left;
+	font-weight: bold;
+}
+
+.admin-page-table-striped tbody tr:nth-of-type(odd) {
+	background-color: #f9f9f9;
+}
+
+.admin-page-form-group {
+	margin-bottom: 15px;
+}
+
+.admin-page-form-control {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	font-size: 14px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.admin-page-btn {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.admin-page-btn-primary {
+	color: #fff;
+	background-color: #007bff;
+	border: none;
+}
+
+.admin-page-btn-danger {
+	color: #fff;
+	background-color: #dc3545;
+	border: none;
+}
+
+.admin-page-btn-success {
+	color: #fff;
+	background-color: #28a745;
+	border: none;
+}
+
+.admin-page-btn-sm {
+	padding: 5px 10px;
+	font-size: 12px;
+}
+
+.admin-page-btn:not(:disabled):not(.disabled):active {
+	box-shadow: none;
+}
+
+.admin-page-table {
+	margin: 20px 0;
+}
+
+.admin-page-table button {
+	margin: 0 20px;
+}
+.admin-page-col-lg-12 {
+	flex: 0 0 100%;
+	max-width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin: 30px 0;
+}
+
+.admin-page-col-lg-6 {
+	margin: 30px 0;
+}

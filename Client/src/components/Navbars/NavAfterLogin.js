@@ -4,10 +4,10 @@ import { Container, Image } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 // import UserPicture from "../../assets/images/userPic.jpg";
 import UserProfileDropdown from "./UserProfileDropdown";
-import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const NavAfterLogin = ({ bgColor = "#000000" }) => {
 	const location = useLocation().pathname;
@@ -16,6 +16,7 @@ const NavAfterLogin = ({ bgColor = "#000000" }) => {
 	const [searchResults, setSearchResults] = useState([]);
 	const inputRef = useRef(null);
 
+	const userRole = useSelector((state) => state.auth.user.role);
 	const handleSearchClick = () => {
 		setIsSearchOpen(true);
 	};
@@ -91,6 +92,12 @@ const NavAfterLogin = ({ bgColor = "#000000" }) => {
 						<li className={`${location === "/mylist" ? "active" : ""}`}>
 							<Link to="/mylist">My List</Link>
 						</li>
+						{userRole === "admin" ||
+							(location === "/admin" && (
+								<li className={`${location === "/admin" ? "active" : ""}`}>
+									<Link to="/admin">Admin</Link>
+								</li>
+							))}
 					</ul>
 				</div>
 				<div
