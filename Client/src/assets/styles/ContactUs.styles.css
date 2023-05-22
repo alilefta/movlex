@@ -1,0 +1,113 @@
+.contact-us-container {
+	width: 70%;
+	margin: 0 auto;
+	background-color: #333;
+	padding: 20px;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.1);
+	margin-top: 80px !important;
+}
+
+.dark-mode .contact-us-container {
+	background-color: #121212;
+}
+
+.contact-us {
+	background-color: #f5f5f5;
+	padding: 20px;
+	border-radius: 4px;
+	/* min-height: 580px; */
+}
+
+.dark-mode .contact-us {
+	background-color: #333;
+}
+
+.contact-us-title {
+	font-size: 3em;
+	margin-bottom: 20px;
+	text-align: center;
+	color: #fff;
+	font-family: "Poppins";
+}
+
+.dark-mode .contact-us-title {
+	color: #f5f5f5;
+}
+
+.contact-us-form-group {
+	margin-bottom: 20px;
+}
+
+.contact-us label {
+	font-weight: bold;
+	color: #fff;
+}
+
+.dark-mode .contact-us label {
+	color: #f5f5f5;
+}
+
+.contact-us input,
+.contact-us textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: #fff;
+	color: #1b1a1a;
+}
+
+.dark-mode .contact-us input,
+.dark-mode .contact-us textarea {
+	background-color: #444;
+	color: #f5f5f5;
+	border-color: #777;
+	margin: 10px 0;
+}
+
+.contact-us textarea {
+	resize: vertical;
+	min-height: 100px;
+}
+
+.contact-us-submit-btn {
+	background-color: #950000;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.contact-us-submit-btn:hover {
+	background-color: #45a049;
+}
+
+.dark-mode .contact-us-submit-btn {
+	background-color: #222;
+	color: #f5f5f5;
+}
+
+.dark-mode .contact-us-submit-btn:hover {
+	background-color: #444;
+}
+
+.contact-us-background {
+	position: relative;
+	width: 100%;
+	height: 850px;
+	background-image: url("../images/breaking_bad_poster.png");
+	background-size: cover;
+	background-position: center;
+}
+
+.contact-us-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}

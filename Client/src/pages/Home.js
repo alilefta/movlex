@@ -11,7 +11,7 @@ const Home = () => {
 
 	return (
 		<div>
-			<Nav show="not-authenticated" />
+			<Nav show="not-authenticated" bgColor="#000000" />
 			<LandingPageSections />
 			<Footer />
 		</div>

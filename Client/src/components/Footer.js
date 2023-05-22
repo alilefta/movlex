@@ -28,7 +28,7 @@ const Footer = () => {
 						<Link to="/shop">SHOP</Link>
 					</li>
 					<li>
-						<Link to="careers">CAREERS</Link>
+						<Link to="/careers">CAREERS</Link>
 					</li>
 				</ul>
 				<ul className="social mt-2">

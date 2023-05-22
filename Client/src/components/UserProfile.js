@@ -140,6 +140,19 @@ const UserProfile = () => {
 
 	return (
 		<div className="container mt-4 mb-4">
+			<h2
+				style={{
+					fontFamily: "Poppins",
+					fontWeight: "bold",
+					fontSize: "2.5em",
+					color: "#2D2D2D",
+					// textAlign: "left",
+					margin: "30px 0 30px 0",
+					textTransform: "capitalize",
+				}}
+			>
+				Welcome {user.firstName} {user.lastName}
+			</h2>
 			<div className="row">
 				<div className="col-md-3 col-offset-1">
 					<div className="profile-picture-container">

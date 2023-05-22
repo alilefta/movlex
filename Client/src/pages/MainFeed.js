@@ -4,7 +4,7 @@ import Nav from "../components/Nav";
 const MainFeed = () => {
 	return (
 		<div>
-			<Nav show="authenticated" bgColorBlack={"#000000"} />
+			<Nav show="authenticated" bgColor="#000000" />
 			<MainFeedHero />
 		</div>
 	);

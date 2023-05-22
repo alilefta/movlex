@@ -7,9 +7,9 @@ import NavJustLogo from "./Navbars/NavJustLogo";
 import { useDispatch } from "react-redux";
 
 import "./Navbars/Navbars.styles.css";
-const Nav = ({ show, bgColorBlack }) => {
+const Nav = ({ show, bgColor }) => {
 	if (show === "authenticated") {
-		return <NavAfterLogin bgColor={bgColorBlack} />;
+		return <NavAfterLogin bgColor={bgColor} />;
 	} else if (show === "not-authenticated") {
 		return <NavBeforeLogin />;
 	} else if (show === "just-logo") {

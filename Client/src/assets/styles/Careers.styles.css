@@ -1,0 +1,52 @@
+.careers-page {
+	background-color: #222;
+	color: #eee;
+	font-family: Arial, sans-serif;
+}
+
+.careers-page header {
+	background-color: #333;
+	padding: 20px;
+}
+
+.careers-page h1 {
+	color: #fff;
+	text-align: center;
+}
+
+.careers-page main {
+	padding: 20px;
+}
+
+.careers-page .careers {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.careers-page .career {
+	width: 300px;
+	background-color: #444;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.careers-page h2 {
+	color: #fff;
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.careers-page p {
+	color: #ccc;
+}
+
+.careers-page .btn {
+	display: inline-block;
+	background-color: #ae0606;
+	color: #fff;
+	padding: 10px 20px;
+	text-decoration: none;
+	border-radius: 4px;
+	margin-top: 10px;
+}

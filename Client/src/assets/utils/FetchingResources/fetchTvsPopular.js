@@ -1,4 +1,4 @@
-export const fetchTVDetails = async (tv_id) => {
+export const fetchTvsPopular = async () => {
 	try {
 		const options = {
 			method: "GET",
@@ -9,7 +9,7 @@ export const fetchTVDetails = async (tv_id) => {
 			},
 		};
 		const response = await fetch(
-			`https://api.themoviedb.org/3/tv/${tv_id}?language=en-US`,
+			"https://api.themoviedb.org/3/tv/popular?language=en-US&page=1",
 			options
 		);
 		const data = await response.json();

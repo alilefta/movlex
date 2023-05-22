@@ -7,6 +7,7 @@ import { fetchTopRatedMovies } from "../assets/utils/FetchingResources/fetchTopR
 import { fetchTrendingMedia } from "../assets/utils/FetchingResources/fetchTrendingMedia";
 import { Link } from "react-router-dom";
 import { fetchPopular } from "../assets/utils/FetchingResources/fetchPopular";
+
 const Movies = () => {
 	const [topRatedMovies, setTopRatedMovies] = useState([]);
 	const [isLoadingTopRated, setIsLoadingTopRated] = useState(true);
@@ -14,6 +15,7 @@ const Movies = () => {
 	const [isLoadingPopular, setIsLoadingPopular] = useState(true);
 	const [trendingMedia, setTrendingMedia] = useState([]);
 	const [isLoadingTrending, setIsLoadingTrending] = useState(true);
+
 	useEffect(() => {
 		fetchTopRatedMovies()
 			.then((data) => {
@@ -23,9 +25,8 @@ const Movies = () => {
 			.catch((error) => {
 				console.log(error);
 			});
-
-		// console.log(topRatedMovies);
 	}, []);
+
 	useEffect(() => {
 		fetchTrendingMedia()
 			.then((data) => {
@@ -36,6 +37,7 @@ const Movies = () => {
 				console.log(error);
 			});
 	}, []);
+
 	useEffect(() => {
 		fetchPopular()
 			.then((data) => {
@@ -46,52 +48,13 @@ const Movies = () => {
 				console.log(error);
 			});
 	}, []);
-	const movies = [
-		{
-			id: 1,
-			title: "Movie 1",
-			image: "https://via.placeholder.com/300x450",
-			rating: 4,
-		},
-		{
-			id: 2,
-			title: "Movie 2",
-			image: "https://via.placeholder.com/300x450",
-			rating: 3,
-		},
-		{
-			id: 3,
-			title: "Movie 3",
-			image: "https://via.placeholder.com/300x450",
-			rating: 5,
-		},
-		{
-			id: 4,
-			title: "Movie 4",
-			image: "https://via.placeholder.com/300x450",
-			rating: 4,
-		},
-		{
-			id: 5,
-			title: "Movie 5",
-			image: "https://via.placeholder.com/300x450",
-			rating: 3,
-		},
-		{
-			id: 6,
-			title: "Movie 6",
-			image: "https://via.placeholder.com/300x450",
-			rating: 5,
-		},
-	];
 
-	const renderMovieCards = (mediaDetails = movies) => {
-		console.log(mediaDetails);
+	const renderMovieCards = (mediaDetails) => {
 		return (
 			mediaDetails &&
 			mediaDetails.length > 0 &&
 			mediaDetails.map((movie) => (
-				<div key={movie.id} className="movie-card">
+				<div key={movie.id} className="movies-page-movie-card">
 					<img
 						src={
 							movie &&
@@ -102,16 +65,14 @@ const Movies = () => {
 							}`
 						}
 						alt={movie && movie.title}
-						className="movie-image"
+						className="movies-page-movie-image"
 					/>
-
-					<div className="movie-info">
-						<Link
-							to={`/movie/${movie.id}`}
-							children={<h3 className="movie-title">{movie.title}</h3>}
-						/>
-						<div className="movie-rating">
-							<BsStarFill className="star-icon" />
+					<div className="movies-page-movie-info">
+						<Link to={`/movie/${movie.id}`} className="movies-page-movie-title">
+							{movie.title}
+						</Link>
+						<div className="movies-page-movie-rating">
+							<BsStarFill className="movies-page-star-icon" />
 							<span>{movie.vote_average}</span>
 						</div>
 					</div>
@@ -123,41 +84,41 @@ const Movies = () => {
 	return (
 		<>
 			<Nav show="authenticated" />
-			<div className="container">
+			<div className="container movies-page">
 				<div className="jumbotron">
 					<h1 className="display-4">Movies</h1>
 					<p className="lead">Discover the latest movies</p>
 				</div>
 
-				<h2 className="section-title">Popular Movies</h2>
+				<h2 className="movies-page-section-title">Popular Movies</h2>
 				{isLoadingPopular ? (
-					<div className="loading-spinner-max">
-						<div className="spinner"></div>
+					<div className="movies-page-loading-spinner-max">
+						<div className="movies-page-spinner"></div>
 					</div>
 				) : (
-					<div className="movie-container">
+					<div className="movies-page-movie-container">
 						{renderMovieCards(popularMovies)}
 					</div>
 				)}
 
-				<h2 className="section-title">Top 10 Movies</h2>
+				<h2 className="movies-page-section-title">Top 10 Movies</h2>
 				{isLoadingTopRated ? (
-					<div className="loading-spinner-max">
-						<div className="spinner"></div>
+					<div className="movies-page-loading-spinner-max">
+						<div className="movies-page-spinner"></div>
 					</div>
 				) : (
-					<div className="movie-container">
+					<div className="movies-page-movie-container">
 						{renderMovieCards(topRatedMovies)}
 					</div>
 				)}
 
-				<h2 className="section-title">Trending Movies</h2>
+				<h2 className="movies-page-section-title">Trending Movies</h2>
 				{isLoadingTrending ? (
-					<div className="loading-spinner-max">
-						<div className="spinner"></div>
+					<div className="movies-page-loading-spinner-max">
+						<div className="movies-page-spinner"></div>
 					</div>
 				) : (
-					<div className="movie-container">
+					<div className="movies-page-movie-container">
 						{renderMovieCards(trendingMedia)}
 					</div>
 				)}

@@ -6,7 +6,7 @@ import Rating from "@mui/material/Rating";
 import { fetchSimilarMovies } from "../assets/utils/FetchingResources/fetchSimilarMovies";
 import CardsSection from "../components/MovieComponents/CardsSection";
 import { fetchMovieDetails } from "../assets/utils/FetchingResources/fetchMovieDetails";
-import { fetchCredits } from "../assets/utils/FetchingResources/fetchCredits";
+import { fetchMovieCredits } from "../assets/utils/FetchingResources/fetchMovieCredits";
 import NoImage from "../assets/images/no-image.jpg";
 import Comments from "../components/MovieComponents/Comments";
 import VideoPlayer from "../components/VideoPlayer";
@@ -44,7 +44,7 @@ const Movie = () => {
 	}, [id]);
 
 	useEffect(() => {
-		fetchCredits(id)
+		fetchMovieCredits(id)
 			.then((data) => {
 				setCredits(data);
 				setIsLoadingCredits(false);

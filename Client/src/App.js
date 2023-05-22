@@ -12,13 +12,16 @@ import TV from "./pages/TV";
 import TVs from "./pages/TVs";
 import Movies from "./pages/Movies";
 import MyList from "./pages/MyList";
-import Popular from "./pages/Popular";
 import ProfilePage from "./pages/Profile";
-import RedirectionPage from "./pages/RedirectionPage";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import LoggingOutPage from "./pages/LoggingOut";
 import About from "./pages/About";
+import Careers from "./pages/Careers";
+import ContactUs from "./pages/ContactUs";
+import Shop from "./pages/Shop";
+import Help from "./pages/Help";
+import AdminDashboard from "./pages/Admin";
 function App() {
 	let isAuth = useSelector((state) => state.auth.isAuthenticated);
 
@@ -44,19 +47,28 @@ function App() {
 							</ProtectedRoute>
 						}
 					/>
-					<Route
+					{/* <Route
 						path="/popular"
 						element={
 							<ProtectedRoute>
 								<Popular />
 							</ProtectedRoute>
 						}
-					/>
+					/> */}
 					<Route
 						path="/mylist"
 						element={
 							<ProtectedRoute>
 								<MyList />
+							</ProtectedRoute>
+						}
+					/>
+
+					<Route
+						path="/admin"
+						element={
+							<ProtectedRoute>
+								<AdminDashboard />
 							</ProtectedRoute>
 						}
 					/>
@@ -106,8 +118,14 @@ function App() {
 					/>
 					<Route path="*" element={<NotFound />} />
 					<Route path="/about" element={<About />} />
-					<Route path="*" element={<NotFound />} />
-					<Route path="*" element={<NotFound />} />
+					<Route path="/help" element={<Help />} />
+
+					<Route path="/careers" element={<Careers />} />
+					<Route path="/shop" element={<Shop />} />
+
+					<Route path="/contact-us" element={<ContactUs />} />
+
+					{/* <Route path="*" element={<NotFound />} /> */}
 				</Routes>
 			</div>
 		</BrowserRouter>

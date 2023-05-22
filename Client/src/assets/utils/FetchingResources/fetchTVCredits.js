@@ -1,4 +1,4 @@
-export const fetchTVDetails = async (tv_id) => {
+export const fetchTVCredits = async (tv_id) => {
 	try {
 		const options = {
 			method: "GET",
@@ -9,7 +9,7 @@ export const fetchTVDetails = async (tv_id) => {
 			},
 		};
 		const response = await fetch(
-			`https://api.themoviedb.org/3/tv/${tv_id}?language=en-US`,
+			`https://api.themoviedb.org/3/tv/${tv_id}/credits?language=en-US`,
 			options
 		);
 		const data = await response.json();
