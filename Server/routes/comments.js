@@ -1,11 +1,10 @@
 const express = require("express");
-const {
-	getComments,
-	postComments,
-	deleteComment,
-} = require("../routes/comments");
+const { getComments, postComment, deleteComment } = require("../controller/comments");
 const router = express.Router();
 
-router.post("/media/:id/comment", postComments);
-router.get("/media/:id/comments", getComments);
-router.delete("/media/:id/comment/:commentId", deleteComment);
+const authenticateToken = require("../middleware/authMiddleware");
+
+router.post("/media/:id/comment", authenticateToken, postComment);
+router.get("/media/:id/comments", authenticateToken, getComments);
+router.delete("/media/:id/comment/:commentId", authenticateToken, deleteComment);
+module.exports = router;

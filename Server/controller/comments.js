@@ -1,5 +1,5 @@
 const Media = require("../models/Media");
-const Comment = require("../models/Comments");
+
 exports.postComment = async (req, res) => {
 	const { id } = req.params;
 	const { comment, rating } = req.body;
@@ -14,16 +14,17 @@ exports.postComment = async (req, res) => {
 		const newComment = {
 			comment,
 			rating,
-			user: req.user._id, // Assuming you have authentication middleware to populate req.user
+			user: req.user._id, // Ensure authentication middleware is in place
 		};
 
 		media.comments.push(newComment);
 
 		const savedMedia = await media.save();
 
-		res.json(savedMedia);
+		res.status(201).json(savedMedia.comments[savedMedia.comments.length - 1]);
 	} catch (err) {
-		res.status(500).json({ error: "Failed to add comment" });
+		console.error(err);
+		res.status(500).json({ error: "Failed to add comment", details: err.message });
 	}
 };
 
@@ -37,21 +38,25 @@ exports.deleteComment = async (req, res) => {
 			return res.status(404).json({ error: "Media not found" });
 		}
 
-		const commentIndex = media.comments.findIndex(
-			(comment) => comment._id.toString() === commentId
-		);
+		const commentIndex = media.comments.findIndex((comment) => comment._id.toString() === commentId);
 
 		if (commentIndex === -1) {
 			return res.status(404).json({ error: "Comment not found" });
 		}
 
+		// Optional: Add user authorization check here
+		// if (media.comments[commentIndex].user.toString() !== req.user._id.toString()) {
+		//     return res.status(403).json({ error: "Not authorized to delete this comment" });
+		// }
+
 		media.comments.splice(commentIndex, 1);
 
 		const savedMedia = await media.save();
 
-		res.json(savedMedia);
+		res.json({ message: "Comment deleted successfully" });
 	} catch (err) {
-		res.status(500).json({ error: "Failed to delete comment" });
+		console.error(err);
+		res.status(500).json({ error: "Failed to delete comment", details: err.message });
 	}
 };
 
@@ -60,7 +65,10 @@ exports.getComments = async (req, res) => {
 
 	try {
 		const media = await Media.findById(id)
-			.populate("comments.user", "firstName lastName")
+			.populate({
+				path: "comments.user",
+				select: "firstName lastName profilePicture",
+			})
 			.exec();
 
 		if (!media) {
@@ -69,6 +77,7 @@ exports.getComments = async (req, res) => {
 
 		res.json(media.comments);
 	} catch (err) {
-		res.status(500).json({ error: "Failed to retrieve comments" });
+		console.error(err);
+		res.status(500).json({ error: "Failed to retrieve comments", details: err.message });
 	}
 };

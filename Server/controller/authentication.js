@@ -4,8 +4,7 @@ var expressJwt = require("express-jwt");
 exports.signup = (req, res) => {
 	const user = new User(req.body);
 
-	user
-		.save()
+	user.save()
 		.then((savedUser) => {
 			return res.json({
 				message: "Success",
@@ -41,17 +40,7 @@ exports.signin = async (req, res) => {
 		// Put token in cookies
 		res.cookie("t", token, { expire: new Date() + 9999 });
 
-		const {
-			_id,
-			firstName,
-			lastName,
-			email,
-			profilePicture,
-			role,
-			subscription_level,
-			comments,
-			createdAt,
-		} = user;
+		const { _id, firstName, lastName, email, profilePicture, role, subscription_level, comments, createdAt } = user;
 
 		return res.json({
 			token,
